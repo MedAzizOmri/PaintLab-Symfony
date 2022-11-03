@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>{% block title %}Welcome To PAINTLAB !{% endblock %}</title>
+        {% include 'base.html.twig' %}
+    </head>
+    <body>
+        {% include 'base/nav.html.twig' %} 
+        {% block body %}
+            {% include 'home/welcome.html.twig' %} 
+            {% include 'home/realisations.html.twig'%}
+        {% endblock %}
+        {% include 'base/footer.html.twig' %} 
+    </body>
+</html>
