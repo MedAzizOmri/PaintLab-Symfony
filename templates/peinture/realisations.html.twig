@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Welcome To PAINTLAB !{% endblock %}
+
+{% block body %}
+{% include 'home/welcome.html.twig' %} 
+{% include 'home/bestsale.html.twig'%}
+<div class="site-section bg-light">
+  <div class="container">
+    <div class="row">
+
+    {% for peinture in peintures %}
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="post-entry-1 h-100">
+          <a href="single.html">
+            <img src="img\tab1.jpg" alt="Image" class="img-fluid">
+          </a>
+          <div class="post-entry-1-contents">
+            <h2><a href="single.html"> {{peinture.nom}} </a></h2>
+              <span class="meta d-inline-block mb-3"> 54July2017 <span class="mx-2">by</span> <a href="#">Admin</a></span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+            {# <div class="col-12 mt-5 text-center">
+              <span class="p-3">1</span>
+              <a href="#" class="p-3">2</a>
+              <a href="#" class="p-3">3</a>
+              <a href="#" class="p-3">4</a>
+            </div> #}
+    
+    </div>  
+  </div>
+</div>
+{% include 'base/footer.html.twig' %}
+{% endblock %}
