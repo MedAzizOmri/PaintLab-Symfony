@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+
 #[ORM\Entity(repositoryClass: PeintureRepository::class)]
 class Peinture
 {
@@ -40,8 +41,8 @@ class Peinture
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column]
-    private ?bool $portfolio = null;
+    #[ORM\Column(length: 255)]
+    private ?string $portfolio = null;
 
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
@@ -166,12 +167,12 @@ class Peinture
         return $this;
     }
 
-    public function isPortfolio(): ?bool
+    public function isPortfolio(): ?string
     {
         return $this->portfolio;
     }
 
-    public function setPortfolio(bool $portfolio): self
+    public function setPortfolio(string $portfolio): self
     {
         $this->portfolio = $portfolio;
 
@@ -267,4 +268,9 @@ class Peinture
 
         return $this;
     }
+
+    // public function __toString()
+    // {
+    //     return(string) $this->getDateRealisation();
+    // }
 }

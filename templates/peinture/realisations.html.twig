@@ -14,16 +14,23 @@
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="post-entry-1 h-100">
           <a href="single.html">
-            <img src="img\tab1.jpg" alt="Image" class="img-fluid">
+            <img src={{peinture.portfolio}} alt="Image" class="img-fluid">
           </a>
           <div class="post-entry-1-contents">
             <h2><a href="single.html"> {{peinture.nom}} </a></h2>
-              <span class="meta d-inline-block mb-3"> 54July2017 <span class="mx-2">by</span> <a href="#">Admin</a></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
+              <span class="mx-2">Price : <a href="">{{peinture.prix}} </a></span>
+              <span class="meta d-inline-block mb-3"></span>
+              <p>Date de Realisation : {{peinture.getDateRealisation.format('d/m/Y')}}</p>
+              <p>{{peinture.description}}</p>
           </div>
         </div>
       </div>
+      
     {% endfor %}
+      <div class="col-12 mt-5 text-center">
+        {% do peintures.setPageRange(5) %}
+        {{knp_pagination_render(peintures, 'base/pagination.html.twig')}}
+      </div>
             {# <div class="col-12 mt-5 text-center">
               <span class="p-3">1</span>
               <a href="#" class="p-3">2</a>
