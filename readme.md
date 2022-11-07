@@ -13,15 +13,17 @@ Vous pouvez vérifier les pré-requis avec la commande suivante :
     symofny check:requirements
 
 
-### Lancer l'environnement de développement
+### L'environnement de développement
 
     symfony serve:start --> Pour démarrer le serveur
     symfony serve:stop --> Pour arrêter le serveur
     composer require knplabs/knp-paginator-bundle --> Download knplabs
+    composer require --dev orm-fixtures --> Download Fixtures
+    composer require fakerphp/faker --> Download Faker
 
 ### Lancer des tests
 
     php bin/phpunit --testdox
 
 
-###  DATE + HEURE du dernier mis à jour : 06Nov2022 23:18
+###  DATE + HEURE du dernier mis à jour : 07Nov2022 01:45

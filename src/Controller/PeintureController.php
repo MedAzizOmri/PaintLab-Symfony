@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class PeintureController extends AbstractController
 {
-    #[Route('/realisations', name: 'realisations')]
+    #[Route('/realisations', name: 'app_realisations')]
     public function realisations(
         PeintureRepository $peintureRepository,
         PaginatorInterface $paginator,

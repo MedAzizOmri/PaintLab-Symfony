@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-
-{% block title %}PaintLab | Peintures{% endblock %}
+{% block title %}PaintLab | Actualites{% endblock %}
 
 {% block body %}
 {% include 'home/welcome.html.twig' %} 
@@ -9,26 +8,26 @@
   <div class="container">
     <div class="row">
 
-    {% for peinture in peintures %}
+    {% for blogpost in blogposts %}
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="post-entry-1 h-100">
           <a href="single.html">
-            <img src={{peinture.portfolio}} alt="Image" class="img-fluid">
+            <img src={{blogpost.contenu}} alt="Image" class="img-fluid">
           </a>
           <div class="post-entry-1-contents">
-            <h2><a href="single.html"> {{peinture.nom}} </a></h2>
-              <span class="mx-2">Price : <a href="">{{peinture.prix}} </a></span>
+            <h2><a href="single.html"> {{blogpost.titre}} </a></h2>
+              <span class="mx-2">Slug : <a href="">{{blogpost.slug}} </a></span>
               <span class="meta d-inline-block mb-3"></span>
-              <p>Date de Realisation : {{peinture.getDateRealisation.format('d/m/Y')}}</p>
-              <p>{{peinture.description}}</p>
+              <p>Date de Realisation : {{blogpost.getDate.format('d/m/Y')}}</p>
+              <p>{{blogpost.contenu}}</p>
           </div>
         </div>
       </div>
       
     {% endfor %}
       <div class="col-12 mt-5 text-center">
-        {% do peintures.setPageRange(5) %}
-        {{knp_pagination_render(peintures, 'base/pagination.html.twig')}}
+        {% do blogposts.setPageRange(5) %}
+        {{knp_pagination_render(blogposts, 'base/pagination.html.twig')}}
       </div>
             {# <div class="col-12 mt-5 text-center">
               <span class="p-3">1</span>
@@ -42,3 +41,4 @@
 </div>
 {% include 'base/footer.html.twig' %}
 {% endblock %}
+
