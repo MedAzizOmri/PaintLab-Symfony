@@ -44,27 +44,24 @@
   <div class="container">
     <div class="row">
 
-    {% for peinture in peintures %}
+    {% for peint in peint %}
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="post-entry-1 h-100">
-          <a href="/realisations/{{peinture.id}}">
-            <img src={{peinture.portfolio}} alt="Image" class="img-fluid">
+          <a href="/realisations/{{peint.id}}">
+            <img src={{peint.portfolio}} alt="Image" class="img-fluid">
           </a>
           <div class="post-entry-1-contents">
-            <h2><a href="single.html"> {{peinture.nom}} </a></h2>
-              <span class="mx-2">Price : <a href="">{{peinture.prix}} </a></span>
+            <h2><a href="single.html"> {{peint.nom}} </a></h2>
+              <span class="mx-2">Price : <a href="">{{peint.prix}} </a></span>
               <span class="meta d-inline-block mb-3"></span>
-              <p>Date de Realisation : {{peinture.getDateRealisation.format('d/m/Y')}}</p>
-              <p>{{peinture.description}}</p>
+              <p>Date de Realisation : {{peint.getDateRealisation.format('d/m/Y')}}</p>
+              <p>{{peint.description}}</p>
           </div>
         </div>
       </div>
       
     {% endfor %}
-      <div class="col-12 mt-5 text-center">
-        {% do peintures.setPageRange(5) %}
-        {{knp_pagination_render(peintures, 'base/pagination.html.twig')}}
-      </div>
+      
             {# <div class="col-12 mt-5 text-center">
               <span class="p-3">1</span>
               <a href="#" class="p-3">2</a>
